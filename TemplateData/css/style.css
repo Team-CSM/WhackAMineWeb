@@ -163,23 +163,23 @@ h4{
   }
 
 .craig{
-    background: url(/TemplateData/craig.jpg);
+    background: url(./TemplateData/craig.jpg);
 }
 
 .adrian{
-    background: url(/TemplateData/Adrian.jpg);
+    background: url(./TemplateData/Adrian.jpg);
 }
 
 .dan{
-    background: url(/TemplateData/dan.jpg);
+    background: url(./TemplateData/dan.jpg);
 }
 
 .eerika{
-    background: url(/TemplateData/eerika.jpg);
+    background: url(./TemplateData/eerika.jpg);
 }
 
 .frances{
-    background: url(/TemplateData/frances.jpg);
+    background: url(./TemplateData/frances.jpg);
 }
 
 .promo-example .responsive-img:hover{
