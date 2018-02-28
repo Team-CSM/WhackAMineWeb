@@ -93,7 +93,7 @@
 
     </div>
   </ul>
-  <div class="rest" style="margin-top: 100vh;">
+  <div class="rest" id = "rest" style="margin-top: calc(100vh - 64px);">
     <button id="jump" class = "hidden" style = "position: absolute; top: 80vh; right: 0; z-index: 999; background-color: rgba(0,0,0,0.6); color: white; width: 15vw; padding: 10px;">Skip Intro <i class="material-icons" style = "font-size: 20px !important; vertical-align: middle;">skip_next</i></button>
     <a name="How"></a>
     <div class="How z-depth-4" style="width: 100vw; padding: 48px;">
@@ -287,6 +287,7 @@
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL3.json", { onProgress: UnityProgress });
       $("#nav").addClass("hidden");
       tvoff.play();
+      document.getElementById("rest").style.marginTop = "100vh";
     }
     var myvideo = document.getElementById('intro'),
     jumplink = document.getElementById('jump');
