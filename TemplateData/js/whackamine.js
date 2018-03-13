@@ -63,6 +63,6 @@ soundEfx = document.getElementById("soundEfx");
     event.preventDefault();
     myvideo.play();
     myvideo.pause();
-    myvideo.currentTime = myvideo.duration;
+    myvideo.currentTime = (myvideo.duration - 0.3);
     myvideo.play();
 }, false);
