@@ -193,7 +193,8 @@ h4{
 }
 
 #overlay > div {
-    text-align: center
+    margin-top: 50px;
+    text-align: center;
 }
 
 .How .center.promo.promo-example > img {
@@ -302,4 +303,15 @@ h4{
 .about.rev-depth {
     width: 100vw;
     padding: 48px;
+}
+
+.feedback{
+    height: 35px;
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.feedback:hover{
+    background: rgba(66,66,66,0.5)
 }
