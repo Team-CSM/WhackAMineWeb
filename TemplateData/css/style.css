@@ -195,6 +195,7 @@ h4{
 #overlay > div {
     margin-top: 50px;
     text-align: center;
+    max-width: 90vw;
 }
 
 .How .center.promo.promo-example > img {
