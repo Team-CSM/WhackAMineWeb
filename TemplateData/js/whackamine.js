@@ -69,6 +69,6 @@ jumplink.addEventListener("click", function (event) {
   event.preventDefault();
   myvideo.play();
   myvideo.pause();
-  myvideo.currentTime = 70;
+  myvideo.currentTime = 69;
   myvideo.play();
 }, false);
