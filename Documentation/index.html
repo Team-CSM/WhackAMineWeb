@@ -66,26 +66,58 @@ $(function() {
 <div class="title">CNN </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p class="">Image Recognition software developed with Keras and TensorFlow to distinguish between categories supplied in the Kaggle <a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/data">dataset</a>.</p>
-<h3>Requirements</h3>
-<ul>
-<li><code>Python 3.5</code></li>
-<li><code>Keras 2.1.1</code></li>
-<li><code>Tensorflow 1.4.0</code></li>
+<div class="textblock"><ul>
+<li>Requirements:<ul>
+<li>h5py (2.7.1)</li>
+<li>image (1.5.19)</li>
+<li>image-slicer (0.1.1)</li>
+<li>Keras (2.1.4)</li>
+<li>macholib (1.9)</li>
+<li>numpy (1.14.1)</li>
+<li>Pillow (5.0.0)</li>
+<li>PyInstaller (3.3.1)</li>
+<li>scipy (1.0.0)</li>
+<li>tensorflow (1.5.0)</li>
 <li>Reduced <a href="https://drive.google.com/file/d/1QjvzyQEgdijjch93Q7xfNklzLWy2lNob/view">data set</a></li>
 </ul>
-<h3>How to run:</h3>
-<ul>
-<li>Ensure CNN.py <code>train_data_dir</code> &amp; <code>validation_data_dir</code> point to the correct folders from the reduced data set.</li>
-<li><code>python CNN.py</code></li>
+</li>
 </ul>
-<h1>demonstration</h1>
-<p class="">A visual representation of the prediction from CNN, which when given an .h5 file from the output of the CNN, will determine whether or not it believes the image passed to it is either a cloud, or clear primary. Used at the demonstration at the end of Sprint 1.</p>
-<h3>How to run:</h3>
+<h2>Binary Convolutional Neural Network</h2>
 <ul>
-<li>Ensure that the .h5 file model is linked at the line <code>model = load_model(FILE_NAME)</code></li>
-<li>Edit <code>test.command</code> to work on your own virtualenv (with tensor flow, eras etc installed)</li>
-<li>Choose an image to predict it’s outcome from the CNN </li>
+<li>Initially at the start of the project, a binary decision neural network was developed in order to distinguish between clouds and clear skies, this classification is useful to satellites in order to preserve battery over cloudy skies as no other information can be gathered.</li>
+</ul>
+<p class=""><a href="https://postimg.org/image/apaywneoj/"></a></p>
+<ul>
+<li>A simple GUI interface was created using Tkinter to display the results, in order to demonstrate progress to the client. The <code>.csv</code> file relating to the actual classification of the image is parsed, and matched to see if the prediciton made by the model is correct.</li>
+<li>Training of the binary CNN:</li>
+<li>Run the binary CNN script for training:<ol type="1">
+<li>Ensure CNN.py <code>train_data_dir</code> &amp; <code>validation_data_dir</code> point to the correct folders from the reduced data set.</li>
+<li><code>python BinaryCNN.py</code></li>
+</ol>
+</li>
+<li>Demonstration. A visual representation of the prediction from CNN, which when given an .h5 file from the output of the CNN, will determine whether or not it believes the image passed to it is either a cloud, or clear primary. Used at the demonstration at the end of Sprint 1.</li>
+<li>Run the demonstration interface:<ol type="1">
+<li>Ensure that the .h5 file model and csv is linked at the line <code>MODEL_LOCATION = ""</code> and <code>CSV_LOCATION = ""</code>.</li>
+<li><code>python BinaryDemo.py</code></li>
+<li>Choose an image to predict it’s outcome from the CNN</li>
+</ol>
+</li>
+<li>Prediction. Used to split a singulatr image into slices, and predict those slices. Slice classifications output to txt files for usage in the game.</li>
+<li>Run the prediction:<ol type="1">
+<li>Ensure that the .h5 file model and image is linked at the line <code>MODEL_LOCATION = ""</code> and <code>IMAGE_LOCATION = ""</code>.</li>
+<li><code>python BinaryPredict.py</code></li>
+<li>Choose an image to predict it’s outcome from the CNN</li>
+</ol>
+</li>
+</ul>
+<h2>Multi-class Convolutional Neural Network</h2>
+<p class="">Following up the binary network, we decided to expand to include other classes valuable to satellite image detection, such as deforestation (in form of slash'n'burn) and illegal mining activity. After some experimentation, as opposed to building the entire model, VGG19 was used in order to increase accuracy. When an image is selected for the game to be loaded, it is split into a 30x30 grid and input into the neural network, from there, the co-ordinates of key data are output to .txt files to be read into the game.</p>
+<ul>
+<li>Run the training:<ol type="1">
+<li>Ensure CNN.py <code>TRAIN_DATA_PATH</code> &amp; <code>VALIDATION_DATA_PATH</code> point to the correct folders from the reduced data set.</li>
+<li><code>python MultiCNN_v2.py</code></li>
+</ol>
+</li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
